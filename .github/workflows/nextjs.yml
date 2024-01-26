@@ -77,10 +77,10 @@ jobs:
         run: ${{ steps.detect-package-manager.outputs.runner }} next build
       - name: Debug ./out directory
         run: |
-          ls -l .
           echo "Contents of .:"
-          ls -l ..
-          echo "Contents of ..:"
+          ls -l .
+          echo "Contents of ./src:"
+          ls -l ./src
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
