@@ -78,9 +78,7 @@ jobs:
       - name: Debug ./out directory
         run: |
           echo "Contents of .:"
-          ls -al .
-          echo "Contents of ./src:"
-          ls -al ./src
+          find . -type d -not \( -path "*/node_modules/*" -o -path "*/.git/*" \) -print
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
